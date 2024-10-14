@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AccessibleName from "./AccessibleName";
+import IconButtons from "./IconButtons";
 import MoreNames from "./MoreNames";
 import RoleExample from "./RoleExample";
 import UserForm from './UserForm';
@@ -16,7 +17,8 @@ function App() {
 		<div>
 			{/* <RoleExample /> */}
 			{/* <AccessibleName /> */}
-			<MoreNames />
+			{/* <MoreNames /> */}
+			<IconButtons />
 			{/* <UserForm onUserAdd={onUserAdd} />
       <hr />
       <UserList users={users} /> */}
