@@ -7,6 +7,12 @@ test("render one row per user", () => {
 		{ name: "Jane Doe", email: "jane.doe@example.com" },
 	];
 	render(<UserList users={users} />);
+
+	// screen.logTestingPlaygroundURL();
+
+	const rows = screen.getAllByRole("row");
+
+	expect(rows).toHaveLength(2);
 });
 
 test("render the email and name of each user", () => {});
