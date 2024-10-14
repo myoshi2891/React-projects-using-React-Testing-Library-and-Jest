@@ -12,3 +12,15 @@ test('it shows two inputs and button', () => {
     expect(inputs).toHaveLength(2);
     expect(button).toBeInTheDocument();
 })
+
+test("it calls onUserAdd when the form is submitted", () => {
+	render(<UserForm />);
+
+	const [nameInput, emailInput] = screen.getAllByRole("textbox");
+
+	user.click(nameInput);
+	user.keyboard("jane");
+
+	user.click(emailInput);
+	user.keyboard("jane@example.com");
+});
