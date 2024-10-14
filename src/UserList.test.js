@@ -6,11 +6,14 @@ test("render one row per user", () => {
 		{ name: "John Doe", email: "john.doe@example.com" },
 		{ name: "Jane Doe", email: "jane.doe@example.com" },
 	];
+	// const { container } =
 	render(<UserList users={users} />);
 
-	// screen.logTestingPlaygroundURL();
-	const rows = within(screen.getByTestId("users")).getAllByRole("row");
+		// eslint-disable-next-line
+		// const rows = container.querySelectorAll("tbody tr");
 
+		// screen.logTestingPlaygroundURL();
+		const rows = within(screen.getByTestId("users")).getAllByRole("row");
 	expect(rows).toHaveLength(2);
 });
 
