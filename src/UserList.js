@@ -9,15 +9,15 @@ function UserList({ users }) {
   });
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>{renderedUsers}</tbody>
-    </table>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody data-testid="users">{renderedUsers}</tbody>
+		</table>
   );
 }
 
