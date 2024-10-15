@@ -18,7 +18,7 @@ function App() {
 			{/* <RoleExample /> */}
 			{/* <AccessibleName /> */}
 			{/* <MoreNames /> */}
-			<IconButtons />
+			{/* <IconButtons /> */}
 			{/* <UserForm onUserAdd={onUserAdd} />
       <hr />
       <UserList users={users} /> */}
