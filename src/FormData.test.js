@@ -4,6 +4,8 @@ import FormData from "./FormData";
 test("the form displays two buttons", () => {
 	render(<FormData />);
 
-	const buttons = screen.getAllByRole("button");
+	const form = screen.getByRole("form");
+
+	const buttons = within(form).getAllByRole("button");
 	expect(buttons).toHaveLength(2);
 });
