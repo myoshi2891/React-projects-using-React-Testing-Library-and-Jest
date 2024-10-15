@@ -4,7 +4,6 @@ function ColorList() {
 			<li>Red</li>
 			<li>Green</li>
 			<li>Blue</li>
-			<li>Yellow</li>
 		</ul>
 	);
 }
