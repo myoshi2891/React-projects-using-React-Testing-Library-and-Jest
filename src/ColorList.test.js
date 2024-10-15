@@ -65,3 +65,4 @@ test("favor queryBy when proving an element does not exist", () => {
 
 	expect(element).not.toBeInTheDocument();
 });
+
