@@ -1,29 +1,57 @@
-import { useState } from 'react';
-import AccessibleName from "./AccessibleName";
-import IconButtons from "./IconButtons";
-import MoreNames from "./MoreNames";
-import RoleExample from "./RoleExample";
-import UserForm from './UserForm';
-import UserList from './UserList';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import RootRoute from './routes/RootRoute';
+import HomeRoute from './routes/HomeRoute';
+import NotFoundRoute from './routes/NotFoundRoute';
+import RepositoriesSearchRoute from './routes/RepositoriesSearchRoute';
+import EditorRoute from './routes/EditorRoute';
+import SignUpRoute from './routes/SignUpRoute';
+import SignInRoute from './routes/SignInRoute';
+import SignOutRoute from './routes/SignOutRoute';
+import TestRoute from './routes/TestRoute';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <RootRoute />,
+    children: [
+      {
+        path: 'test',
+        element: <TestRoute />,
+      },
+      {
+        path: 'signout',
+        element: <SignOutRoute />,
+      },
+      {
+        path: 'signup',
+        element: <SignUpRoute />,
+      },
+      {
+        path: 'signin',
+        element: <SignInRoute />,
+      },
+      {
+        path: '',
+        element: <HomeRoute />,
+      },
+      {
+        path: 'repositories/:owner/:repoName/*',
+        element: <EditorRoute />,
+      },
+      {
+        path: 'repositories',
+        element: <RepositoriesSearchRoute />,
+      },
+      {
+        path: '*',
+        element: <NotFoundRoute />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  const [users, setUsers] = useState([]);
-
-  const onUserAdd = (user) => {
-    setUsers([...users, user]);
-  };
-
-  return (
-		<div>
-			{/* <RoleExample /> */}
-			{/* <AccessibleName /> */}
-			{/* <MoreNames /> */}
-			{/* <IconButtons /> */}
-			{/* <UserForm onUserAdd={onUserAdd} />
-      <hr />
-      <UserList users={users} /> */}
-		</div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
