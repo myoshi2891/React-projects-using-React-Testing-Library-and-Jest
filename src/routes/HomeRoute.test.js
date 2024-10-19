@@ -4,6 +4,18 @@ import { rest } from "msw";
 import { MemoryRouter } from "react-router-dom";
 import HomeRoute from "./HomeRoute";
 
+createServer([
+	{
+		path: "/api/repositories",
+		method: "get",
+		res: (req, res, ctx) => {
+			return {
+				items: [{}, {}],
+			};
+		},
+	},
+]);
+
 const handlers = [
 	rest.get("/api/repositories", (req, res, ctx) => {
 		const language = req.url.searchParams.get("q").split("language:")[1];
