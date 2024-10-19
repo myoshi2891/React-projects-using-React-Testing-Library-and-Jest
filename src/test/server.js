@@ -11,14 +11,11 @@ export function createServer(handlerConfig) {
 
 	beforeAll(() => {
 		server.listen();
-		console.log("server is listening");
 	});
 	afterEach(() => {
 		server.resetHandlers();
 	});
 	afterAll(() => {
 		server.close();
-		console.log("server is closed");
-		
 	});
 }
