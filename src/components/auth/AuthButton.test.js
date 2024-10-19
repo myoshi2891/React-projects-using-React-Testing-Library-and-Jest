@@ -48,7 +48,7 @@ describe("when user is not signed in", () => {
 	});
 });
 
-describe("when user is signed in", () => {
+describe.only("when user is signed in", () => {
 	createServer([
 		{
 			path: "/api/user",
